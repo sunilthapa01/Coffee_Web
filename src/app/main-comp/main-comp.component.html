@@ -1,0 +1,77 @@
+ <!-- HEADE SECTION -->
+<header class="header-container">
+    <nav class="nav-bar">
+        <div class="logo">
+            <img src="/assets/Bean.png" alt="Bean Scene">
+        </div>
+        <ul>
+            <li>Home</li>
+            <li>Menu</li>
+            <li (click)="open()">Order Now</li>
+            <app-pdf-componen *ngIf="ShowPopup" [ShowPopup]="ShowPopup" 
+            (closePopup)="close()"></app-pdf-componen>
+            <li>Contact Us</li>
+        </ul>
+        <div class="btns">
+            <button>Sign In</button>
+        </div>
+    </nav>
+    <div class="details-container">
+        <h2>We've got your morning covered with</h2>
+        <h1>Coffee</h1>
+        <p>It's best to start your day with a cup of coffee. Discover the best flavors of coffee you will ever have. We provide the best for our customers.</p>
+        <button>Order Now</button>
+    </div>
+</header>
+<!-- // MIDDLE INFO SECTION -->
+<section class="middle-col">
+    <div class="middle-cont">
+        <div class="middle-detail">
+            <h1>Discover the best coffee</h1>
+            <p>Bean Scene is a coffee shop that provides quality coffee that helps boost productivity and uplifts your mood.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="middle-img">
+            <img src="/assets/Mask.png" alt="Coffee Beans">
+        </div>
+    
+    </div>
+</section>
+<!-- Coffee section  -->
+<!-- <ul>
+    <li *ngFor="let coffee of coffees">
+      <h3>{{ coffee.title }}</h3>
+      <img [src]="coffee.image" alt="{{ coffee.title }}" width="100">
+      <p>{{ coffee.description }}</p>
+    </li>
+  </ul> -->
+ <section class="Item-Area">
+    <div class="Item-content">
+        <h1>Enjoy a new blend of coffee style</h1>
+        <p>Explore all flavours of coffee with us. There is always a new cup worth experiencing</p>
+        <div class="Item-list">
+            <ul>
+                <li *ngFor="let coffee of coffees">
+                    <img [src]="coffee.image" width="100">
+                    <h3>{{coffee.title}}</h3>
+                    <p>{{ coffee.description }}</p>
+                    <button>Order Now</button>
+
+                </li>
+            </ul>
+
+        </div>
+    </div>
+ </section>
+
+<!-- Coffee Info Section  -->
+<section class="Coffe-Area">
+   
+    <div class="Coffe-cont">
+        <h1>Get a chance to have an
+            Amazing morning</h1>
+        <p>We are giving you are one time opportunity to
+            experience a better life with coffee.</p>
+        <button>Order Now</button>
+    </div>
+</section>

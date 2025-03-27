@@ -1,0 +1,64 @@
+<section  class="popup-container">
+    <div class="popup-details">
+        <h1>Fill Detials</h1>
+        <div class="popup-customer">
+            <h2>Customer infomration</h2>
+            <div class="popup-input" id="popup-input">
+                <input type="text" placeholder="Enter Full Name" [(ngModel)]="Name">
+                <input type="number" placeholder="Enter Number" [(ngModel)]="Number">
+                <input type="text" placeholder="Enter Address" [(ngModel)]="Address">
+                <input type="text" placeholder="Enter Delivery Address" [(ngModel)]="Delivery">
+            </div>
+            <h2>Coffee Selection</h2>
+            <div class="popup-selection">
+             <div class="popup-select">
+                <label for="coffeeType">Select Coffee Type:</label>
+                <select>
+                    <option value="espresso"></option>
+                    <option value="espresso">Espresso</option>
+                    <option value="cappuccino">Cappuccino</option>
+                    <option value="latte">Latte</option>
+                    <option value="mocha">Mocha</option>
+                    <option value="americano">Americano</option>
+                </select>
+             </div>
+             <div class="popup-select">
+                <label for="size">Size:</label>
+                <select>
+                    <option></option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+             </div>
+             <div class="popup-select">
+                <label for="milk">Milk Preference:</label>
+                <select>
+                    <option></option>
+                    <option value="full-cream">Full Cream</option>
+                    <option value="skimmed">Skimmed</option>
+                    <option value="almond">Almond</option>
+                    <option value="oat">Oat</option>
+                    <option value="soy">Soy</option>
+                    <option value="no-milk">No Milk</option>
+                </select>
+             </div>   <div class="popup-select">
+                <label for="sugar">Sugar Level:</label>
+                <select>
+                    <option></option>
+                    <option value="no-sugar">No Sugar</option>
+                    <option value="1-spoon">1 Spoon</option>
+                    <option value="2-spoons">2 Spoons</option>
+                    <option value="3-spoons">3 Spoons</option>
+                </select>
+             </div>
+            </div>
+       
+        <div *ngIf="ShowPopup" class="submit-btn">
+            <button (click)="close()"> Close</button>
+            <button (click)="getPDF()"> Order Now </button>
+        </div>        
+        </div>
+
+    </div>
+</section>

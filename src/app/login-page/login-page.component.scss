@@ -1,0 +1,118 @@
+.Login-container {
+    background: url('/assets/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .message-box {
+        border: 1px solid #43A047;
+        display: none;
+        border-radius: 12px;
+        // background-color: rgba(67, 160, 71, 0.5);
+        padding: 16px;
+        margin: 20px 0px;
+
+        h1 {
+            color: #43A047;
+            font-size: 16px;
+            font-family: sans-serif;
+            -webkit-text-stroke: 1px #43A047;
+            // text-shadow: 0px 0px 5px #000;
+
+        }
+
+
+    }
+
+    .warning-message {
+        border: 1px solid red;
+        display: none;
+        border-radius: 12px;
+        background-color: rgba(212, 70, 14, 0.5);
+        padding: 16px;
+        margin: 20px 0px;
+
+        h1 {
+            color: #FF9800;
+            font-size: 16px;
+            font-family: sans-serif;
+            -webkit-text-stroke: 1px #FF9800;
+            text-shadow: 0px 0px 5px #000;
+
+        }
+
+    }
+
+    .Login-detail {
+        width: clamp(400px, 20vw, 550px);
+        padding: 20px;
+        // background: rgba(0, 0, 0, 0.8);
+        background: none;
+        backdrop-filter: blur(5px);
+        border-radius: 14px;
+        border: 1px solid #fff;
+        height: clamp(350px, 50vh, 750px);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h1 {
+            color: #fff;
+            font-weight: 700;
+            font-size: 50px;
+            font-family: sans-serif;
+
+        }
+
+        input {
+            height: 42px;
+            border-radius: 12px;
+            border: 1px solid #fff;
+            background: none;
+            color: #fff;
+            padding: 12px;
+            cursor: pointer;
+
+        }
+
+        input::placeholder {
+            color: #fff;
+            font-size: 16px;
+
+        }
+
+        button {
+            height: 42px;
+            border-radius: 12px;
+            background: none;
+            color: #fff;
+            border: 1px solid #fff;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        button:active {
+            background: rgb(136, 77, 77);
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+        }
+
+    }
+
+}
+
+@media (max-width:770px) {
+    .Login-container {
+        padding: 20px;
+    }
+}

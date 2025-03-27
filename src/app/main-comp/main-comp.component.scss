@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap');
+
+
+$family: 'Playfair Display', serif;
+$clicker: 'Clicker Script', cursive;
+
+
+
+
+.header-container {
+
+    width: 100%;
+    height: calc(100vh - 10px);
+    background: url('/assets/coffe_bg.png') center/cover;
+    position: relative;
+
+    .details-container {
+        position: absolute;
+        top: 50%;
+        left: clamp(80px, 10vw, 167px);
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: clamp(450px, 90vw, 610px);
+        z-index: 200;
+
+        h2 {
+            font-family: $family;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        h1 {
+            font-family: $clicker;
+            color: #fff;
+            font-size: clamp(80px, 12vw, 220px);
+            font-weight: 300;
+
+        }
+
+        p {
+            font-family: $family;
+            color: #fff;
+            line-height: 34px;
+            font-size: 20px;
+        }
+
+        button {
+            background: #F9C06A;
+            border-radius: 24px;
+            padding: 15px 25px;
+            border: none;
+            color: #000;
+            font-family: $family;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: all 0.3s ease;
+
+
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+    }
+
+
+
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        z-index: 120;
+        display: flex;
+        padding: 20px clamp(40px, 10vw, 80px);
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(20px);
+
+        .logo {
+            img {
+                width: clamp(76px, 15vw, 132px);
+                height: 46px;
+                object-fit: contain;
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            flex-wrap: wrap;
+
+            li {
+                list-style: none;
+                color: #fff;
+                cursor: pointer;
+                flex-grow: 1;
+                font-family: $family;
+                transition: all 0.3s ease;
+                // width: 12%;
+
+            }
+
+            li:hover {
+                transform: scale(1.1);
+                font-size: 17px;
+            }
+        }
+
+        .btns {
+            button {
+                border-radius: 24px;
+                border: none;
+                background: #F9C06A;
+                color: #1E1E1E;
+                padding: 15px 25px;
+                font-family: $family;
+                cursor: pointer;
+                box-shadow: 0px 0px 5px #F9C06A;
+                transition: all 0.3s ease;
+            }
+
+            button:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.header-container::after {
+    content: ' ';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: calc(100vh - 10px);
+    z-index: 100;
+}
+
+
+
+.middle-col {
+    padding: 82px clamp(45px, 10vw, 93px);
+    height: 100vh;
+    width: 100%;
+
+    .middle-cont {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: clamp(300px, 80vw, 1100px);
+        margin: 0 auto;
+        gap: 10%;
+
+        .middle-detail {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            p {
+                font-family: $family;
+                font-size: clamp(10px, 10vw, 20px);
+                color: #707070;
+                line-height: 34px;
+            }
+
+            h1 {
+                color: #603809;
+                font-family: $family;
+                font-size: clamp(15px, 4vw, 52px);
+                line-height: auto;
+            }
+
+            button {
+                border-radius: 24px;
+                border: none;
+                background: #F9C06A;
+                color: #1E1E1E;
+                padding: 15px 25px;
+                width: clamp(70px, 18vw, 134px);
+                font-family: $family;
+                cursor: pointer;
+                box-shadow: 0px 0px 5px #F9C06A;
+                transition: all 0.3s ease;
+            }
+
+            button:hover {
+                transform: scale(1.1);
+            }
+        }
+
+
+        .middle-img {
+            width: clamp(200px, 30vw, 450px);
+            /* Make it more balanced */
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.Coffe-Area {
+    width: 100%;
+    height: clamp(250px, 50vw, 574px);
+    background: url('/assets/blackCoffe.png') center/cover;
+    padding: clamp(70px, 50vw, 135px) clamp(45px, 50vw, 93px);
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .Coffe-cont {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        z-index: 299;
+        gap: 10px;
+        width: 50%;
+
+        h1 {
+            color: #fff;
+            font-size: clamp(25px, 4vw, 54px);
+            font-family: $family;
+        }
+
+        p {
+            color: #fff;
+            font-family: $family;
+            font-size: clamp(10px, 4vw, 20px);
+            font-weight: 500;
+        }
+
+        button {
+            border-radius: 24px;
+            border: none;
+            background: #F9C06A;
+            color: #1E1E1E;
+            padding: 15px 25px;
+            width: clamp(70px, 18vw, 134px);
+            font-family: $family;
+            cursor: pointer;
+            // box-shadow: 0px 0px 5px #F9C06A;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.Coffe-Area::after {
+    content: ' ';
+    background: url('/assets/cupbg.png') center/cover;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: clamp(260px, 52vw, 595px);
+}
+
+.Item-Area{
+    width: 100%;
+    height: clamp(350px ,50vw , 550px);
+    padding:clamp(40px, 50vw , 82px) clamp(40px, 50vw , 93px);
+    
+
+}
