@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from 'express';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
@@ -17,32 +18,84 @@ export class PdfComponenComponent {
   close() { 
     this.closePopup.emit();
   }
+
   Name: string = '';
   Number: number = 0;
   Address: string = ' ';
   Delivery: string = '';
+
+  // userData = {
+  //   name: "Sunil Kumar",
+  //   email: "sunil@example.com"
+  // };
+
+  // @ViewChild('templateContainer', { static: false }) templateContainer!: ElementRef;
+
+  // getPDF() {
+  //   const element = this.templateContainer.nativeElement;
+
+  //   html2canvas(element).then(canvas => {
+  //     const imgData = canvas.toDataURL('image/png');
+  //     const pdf = new jsPDF();
+  //     pdf.addImage(imgData, 'PNG', 10, 10, 190, 0);
+  //     pdf.save('UserDetails.pdf');
+  //   });
+  // }
+  
  
-  getPDF() {
-    const doc = new jsPDF();
-    // doc.setLineWidth(0.5);
-    // doc.line(10, 25, 200, 25);
+  // generatePDF() {
+  //   const template = './template.html';
+  //   console.log(template);
+  //   const doc = new jsPDF();
+  //   doc.text(template, 10, 10);
 
-    // doc.setFontSize(12);
-    // doc.setFont('helvetica', 'bold');
+  //   doc.save('UserDetails.pdf');
 
-    // doc.text(`Name:`, 10, 40);
-    // doc.setFont('helvetica', 'normal');
-    // doc.text(this.Name, 50, 40);
+  //   // doc.setLineWidth(0.5);
+  //   // doc.line(10, 25, 200, 25);
 
-    // doc.setFont('helvetica', 'bold');
-    // doc.text(`Email:`, 10, 50);
-    // doc.setFont('helvetica', 'normal');
-    // doc.text(this.Number.toString(), 50, 50);
 
-    // doc.setFont('helvetica', 'bold');
-    // doc.text(`Address:`, 10, 60);
-    // doc.setFont('helvetica', 'normal');
-    // doc.text(this.Address, 50, 60, { maxWidth: 140 });
-    // doc.save('UserDetails.pdf');
+  //   // doc.setFontSize(12);
+  //   // doc.setFont('helvetica', 'bold');
+
+  //   // doc.text(`Name:`, 10, 40);
+  //   // doc.setFont('helvetica', 'normal');
+  //   // doc.text(this.Name, 50, 40);
+
+  //   // doc.setFont('helvetica', 'bold');
+  //   // doc.text(`Email:`, 10, 50);
+  //   // doc.setFont('helvetica', 'normal');
+  //   // doc.text(this.Number.toString(), 50, 50);
+
+  //   // doc.setFont('helvetica', 'bold');
+  //   // doc.text(`Address:`, 10, 60);
+  //   // doc.setFont('helvetica', 'normal');
+  //   // doc.text(this.Address, 50, 60, { maxWidth: 140 });
+  // }
+  
+  
+  constructor() {
+
+   }
+
+  ngOnInit(): void {}
+
+  generatePDF(): void {
+    const content = document.getElementById('pdfContent');
+    
+    if (!content) {
+      console.error('Element not found!');
+      return;
+    }
+
+    html2canvas(content).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      const imgWidth = 190; // PDF width
+      const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
+
+      pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
+      pdf.save('UserDetails.pdf');
+    });
   }
 }

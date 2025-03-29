@@ -8,8 +8,7 @@
             <li>Home</li>
             <li>Menu</li>
             <li (click)="open()">Order Now</li>
-            <app-pdf-componen *ngIf="ShowPopup" [ShowPopup]="ShowPopup" 
-            (closePopup)="close()"></app-pdf-componen>
+            <app-pdf-componen *ngIf="ShowPopup"></app-pdf-componen>
             <li>Contact Us</li>
         </ul>
         <div class="btns">
@@ -56,6 +55,7 @@
                     <h3>{{coffee.title}}</h3>
                     <p>{{ coffee.description }}</p>
                     <button>Order Now</button>
+                    
 
                 </li>
             </ul>

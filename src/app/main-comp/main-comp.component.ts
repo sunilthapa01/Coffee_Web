@@ -8,26 +8,30 @@ import { CoffeeService } from '../services/coffee.service';
 @Component({
   selector: 'app-main-comp',
   standalone: true,
-  imports: [PdfComponenComponent,FormsModule,CommonModule],
+  imports: [PdfComponenComponent, FormsModule, CommonModule],
   templateUrl: './main-comp.component.html',
   styleUrl: './main-comp.component.scss'
 })
 export class MainCompComponent {
-  ShowPopup:boolean= false;
+  ShowPopup: boolean = false;
   open() {
     this.ShowPopup = true;
   }
   close() {
-    this.ShowPopup = false;  
+    this.ShowPopup = false;
   }
   coffees: any[] = [];
 
-  constructor(private coffeeService: CoffeeService) {}
+  constructor(private coffeeService: CoffeeService) { }
 
   ngOnInit(): void {
     this.coffeeService.getCoffees().subscribe({
-      next: (data) => (this.coffees = data),
+      next: (data) => {
+        this.coffees = data;
+        console.log('Coffee Data:', this.coffees); // Log the entire coffee data array
+      },
       error: (err) => console.error('Error fetching coffee data:', err)
     });
   }
+  
 }
