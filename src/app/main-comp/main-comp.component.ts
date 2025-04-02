@@ -14,6 +14,14 @@ import { CoffeeService } from '../services/coffee.service';
 })
 export class MainCompComponent {
   ShowPopup: boolean = false;
+  
+  Test: boolean = false;
+  ShowData() {
+    this.Test = !this.Test;
+  }
+
+
+
   open() {
     this.ShowPopup = true;
   }

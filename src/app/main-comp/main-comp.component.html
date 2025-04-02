@@ -28,7 +28,7 @@
         <div class="middle-detail">
             <h1>Discover the best coffee</h1>
             <p>Bean Scene is a coffee shop that provides quality coffee that helps boost productivity and uplifts your mood.</p>
-            <button>Learn More</button>
+            <button (click)="ShowData()">Learn More</button>
         </div>
         <div class="middle-img">
             <img src="/assets/Mask.png" alt="Coffee Beans">
@@ -44,7 +44,7 @@
       <p>{{ coffee.description }}</p>
     </li>
   </ul> -->
- <section class="Item-Area">
+ <section class="Item-Area" *ngIf="Test">
     <div class="Item-content">
         <h1>Enjoy a new blend of coffee style</h1>
         <p>Explore all flavours of coffee with us. There is always a new cup worth experiencing</p>
@@ -64,7 +64,7 @@
     </div>
  </section>
  <!-- QUALITY INFORMATION -->
-<section class="quality-Area">
+<section class="quality-Area" *ngIf="Test">
     <div class="quality-title">
         <h1>Why are we different?</h1>
         <p>We don’t just make your coffee, we make your day!</p>
@@ -98,7 +98,7 @@
     </div>
 </section>
 <!-- Coffee Info Section  -->
-<section class="Coffe-Area">
+<section class="Coffe-Area" *ngIf="Test">
    
     <div class="Coffe-cont">
         <h1>Get a chance to have an
