@@ -389,3 +389,48 @@ $clicker: 'Clicker Script', cursive;
 .Item-content ul li button:hover {
     background: #d98828;
 }
+
+
+
+
+
+// QAULAITY CARD
+.quality-Area {
+    width: 100%;
+    padding: 40px min(10vw, 93px);
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    text-align: center;
+
+    .quality-card {
+        display: flex;
+        gap: 20px;
+        justify-content: space-evenly;
+
+        .card-1 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            width: 25%;
+            height: min(10vh, 294px);
+
+            img {
+                width: min(5vw, 88px);
+            }
+
+            h2 {
+                color: #603809;
+                font-family: $family;
+                font-size: 28px;
+            }
+
+            p {
+                color: #707070;
+                font-size: 20px;
+                font-family: $family;
+            }
+        }
+    }
+}

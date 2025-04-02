@@ -1,0 +1,48 @@
+div {
+    background: #000;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .Loader-contianer {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 10px double #fff;
+        position: fixed;
+        z-index: auto;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        border-top: 10px solid red;
+        border-right: 10px solid red;
+        justify-content: center;
+        animation: rotate 1s infinite linear;
+
+    }
+
+    // .Loader-contianer::before {
+    //     content: '';
+    //     width: 180px;
+    //     /* Slightly smaller than container */
+    //     height: 180px;
+    //     background: yellow;
+    //     position: absolute;
+    //     // border-radius: 50%;
+
+    //     z-index: -1;
+    //     animation: rotate 1s infinite linear;
+    //     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    //     /* To blend with border */
+    // }
+
+
+
+    @keyframes rotate {
+        100% {
+            rotate: 360deg;
+        }
+    }
+}

@@ -17,6 +17,7 @@ export class PdfComponenComponent {
   @Output() closePopup = new EventEmitter<void>(); 
   close() { 
     this.closePopup.emit();
+    console.log('Cliked')
   }
 
   Name: string = '';
