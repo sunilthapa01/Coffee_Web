@@ -403,6 +403,20 @@ $clicker: 'Clicker Script', cursive;
     gap: 27px;
     text-align: center;
 
+    .quality-title {
+        h1 {
+            font-size: min(10vw, 52px);
+            color: #603809;
+            font-family: $family;
+        }
+
+        p {
+            font-size: min(10vw, 20px);
+            font-family: $family;
+            color: #707070;
+        }
+    }
+
     .quality-card {
         display: flex;
         gap: 20px;
@@ -413,8 +427,15 @@ $clicker: 'Clicker Script', cursive;
             flex-direction: column;
             gap: 10px;
             align-items: center;
-            width: 25%;
-            height: min(10vh, 294px);
+            width: max(50vw, 280px);
+            border: 1px solid #F9C06A;
+            height: min(50vh, 294px);
+            align-items: center;
+            justify-content: center;
+            background: #FFF9F1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            // opacity: 0.5;
 
             img {
                 width: min(5vw, 88px);
@@ -423,7 +444,7 @@ $clicker: 'Clicker Script', cursive;
             h2 {
                 color: #603809;
                 font-family: $family;
-                font-size: 28px;
+                font-size: min(5vw, 28px);
             }
 
             p {
@@ -431,6 +452,11 @@ $clicker: 'Clicker Script', cursive;
                 font-size: 20px;
                 font-family: $family;
             }
+        }
+
+        .card-1:hover {
+            transform: scale(1.1);
+            background: #FFEED8;
         }
     }
 }
