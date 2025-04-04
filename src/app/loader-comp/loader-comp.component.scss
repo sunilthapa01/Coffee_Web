@@ -1,48 +1,91 @@
-div {
-    background: #000;
-    height: 100vh;
+.main-comp {
+    background: rgba(186, 158, 115, 0.5);
     width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    .Loader-contianer {
+    .cup-cont {
         width: 200px;
         height: 200px;
-        border-radius: 50%;
-        border: 10px double #fff;
-        position: fixed;
-        z-index: auto;
-        overflow: hidden;
+        border: 10px solid #F9C06A;
+        border-radius: 0px 0px 50px 50px;
+        position: relative;
+        padding: 10px;
         display: flex;
-        align-items: center;
-        border-top: 10px solid red;
-        border-right: 10px solid red;
-        justify-content: center;
-        animation: rotate 1s infinite linear;
+        align-items: end;
+        box-shadow: 10px 10px 0px #603809;
+
+        // Coffee liquid
+        .coffe-cup {
+            background-color: #603809;
+            width: 100%;
+            height: 80%;
+            border-radius: 0 0 50px 50px;
+            position: relative;
+            animation: coffee-wave 1.5s infinite ease-in-out alternate;
+        }
 
     }
 
-    // .Loader-contianer::before {
-    //     content: '';
-    //     width: 180px;
-    //     /* Slightly smaller than container */
-    //     height: 180px;
-    //     background: yellow;
-    //     position: absolute;
-    //     // border-radius: 50%;
+    .cup-cont::after {
+        content: '';
+        position: absolute;
+        width: 70px;
+        height: 80px;
+        border: 10px solid #F9C06A;
+        right: -89px;
+        top: 20px;
+        box-shadow: inset 10px 10px 0px #603809;
+        border-radius: 0px 50px 50px 0px;
+    }
+}
 
-    //     z-index: -1;
-    //     animation: rotate 1s infinite linear;
-    //     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
-    //     /* To blend with border */
-    // }
+@keyframes steam-rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
 
+    100% {
+        transform: translateY(-40px) scale(1.2);
+        opacity: 0;
+    }
+}
 
+@keyframes coffee-wave {
+    0% {
+        clip-path: polygon(0% 60%, 10% 55%, 20% 50%, 30% 53%, 40% 56%, 50% 54%,
+                60% 52%, 70% 53%, 80% 56%, 90% 60%, 100% 58%, 100% 100%, 0% 100%);
+        height: 150px;
+    }
 
-    @keyframes rotate {
-        100% {
-            rotate: 360deg;
-        }
+    25% {
+        clip-path: polygon(0% 50%, 10% 45%, 20% 48%, 30% 55%, 40% 58%, 50% 52%,
+                60% 50%, 70% 55%, 80% 58%, 90% 55%, 100% 52%, 100% 100%, 0% 100%);
+        height: 200px;
+
+    }
+
+    50% {
+        clip-path: polygon(0% 50%, 10% 45%, 20% 48%, 30% 55%, 40% 58%, 50% 52%,
+                60% 50%, 70% 55%, 80% 58%, 90% 55%, 100% 52%, 100% 100%, 0% 100%);
+        height: 250px;
+    }
+
+    75% {
+        height: 300px;
+
+    }
+
+    100% {
+        clip-path: polygon(0% 60%, 10% 55%, 20% 50%, 30% 53%, 40% 56%, 50% 54%,
+                60% 52%, 70% 53%, 80% 56%, 90% 60%, 100% 58%, 100% 100%, 0% 100%);
+        height: 350px;
     }
 }

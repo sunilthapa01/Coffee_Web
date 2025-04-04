@@ -3,6 +3,7 @@ import { PdfComponenComponent } from '../pdf-componen/pdf-componen.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CoffeeService } from '../services/coffee.service';
+import { LoaderService } from '../loader.service';
 
 
 @Component({
@@ -17,7 +18,11 @@ export class MainCompComponent {
   
   Test: boolean = false;
   ShowData() {
+    this.loader.showLoader();
     this.Test = !this.Test;
+    setTimeout(() => {
+      this.loader.hideLoader()
+    }, 5000);
   }
 
 
@@ -30,7 +35,7 @@ export class MainCompComponent {
   }
   coffees: any[] = [];
 
-  constructor(private coffeeService: CoffeeService) { }
+  constructor(private coffeeService: CoffeeService, public loader:LoaderService) { }
 
   ngOnInit(): void {
     this.coffeeService.getCoffees().subscribe({
