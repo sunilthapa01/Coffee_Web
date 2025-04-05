@@ -29,8 +29,9 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
+          "styles": [
+             "node_modules/odometer/themes/odometer-theme-default.css",
+             "../First-Frontend/src/styles.scss"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
